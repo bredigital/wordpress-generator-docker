@@ -1,0 +1,23 @@
+version: '3.6'
+services:
+  db:
+    image: mariadb:latest
+    environment:
+      MYSQL_DATABASE: gen
+      MYSQL_ROOT_PASSWORD: ds0f437
+  www:
+    depends_on:
+    - db
+    build:
+      context: ./7.2/apache
+      dockerfile: Dockerfile
+    environment:
+      GN_DOMAIN: localhost:8080
+      GN_DEBUG: 1
+      DB_HOST: db
+      DB_DATABASE: gen
+      DB_USER: root
+      DB_PASSWORD: ds0f437
+      MAIL_ON: 0
+    ports:
+    - 8080:80
