@@ -11,4 +11,5 @@ RUN curl -L -o /usr/bin/composer https://getcomposer.org/composer-stable.phar  \
 RUN curl -o /usr/src/generator.zip -fSL "https://github.com/bredigital/wordpress-generator/archive/master.zip?v=0" \
 	&& unzip -q /usr/src/generator.zip -d /usr/src/ \
 	&& cp -r /usr/src/wordpress-generator*/src/* /var/www/html \
-	&& composer install -q --no-dev
+	&& composer install -q --no-dev \
+	&& chown www-data:www-data -R /var/www/html
