@@ -9,10 +9,10 @@ services:
     depends_on:
     - db
     build:
-      context: ./7.2/apache
+      context: ./7.4/apache
       dockerfile: Dockerfile
     environment:
-      GN_DOMAIN: localhost
+      GN_DOMAIN: localhost:8080
       GN_DEBUG: 1
       DB_HOST: db
       DB_DATABASE: gen
@@ -20,4 +20,4 @@ services:
       DB_PASSWORD: ds0f437
       MAIL_ON: 0
     ports:
-    - 80:80
+    - 8080:80
