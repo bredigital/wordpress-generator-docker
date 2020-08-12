@@ -11,7 +11,7 @@ RUN curl -L -o /usr/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pa
 ENV GN_SYSTEM_WPCLI true
 ENV GN_WPCLI        /usr/bin/wp
 
-RUN curl -o /usr/src/generator.zip -fSL "https://github.com/bredigital/wordpress-generator/releases/download/1.3b/wordpress-generator-1.3b.zip" \
+RUN curl -o /usr/src/generator.zip -fSL "https://github.com/bredigital/wordpress-generator/releases/download/1.3.1b/wordpress-generator-1.3.1b.zip" \
 	&& mkdir /usr/src/generator \
 	&& unzip -q /usr/src/generator.zip -d /usr/src/generator \
 	&& cp -r /usr/src/generator/* /var/www/html \
